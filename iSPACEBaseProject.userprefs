@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\uniTUIOCE\iPhoneInput fakery\BBInputDelegate.cs">
+    <Files>
+      <File FileName="Assets\Plugins\uniTUIOCE\utilities\BBTouchManagerStarter.cs" Line="22" Column="69" />
+      <File FileName="Assets\Plugins\uniTUIOCE\iPhoneInput fakery\BBInputDelegate.cs" Line="54" Column="4" />
+      <File FileName="Assets\Plugins\uniTUIOCE\iPhoneInput fakery\BBInputController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

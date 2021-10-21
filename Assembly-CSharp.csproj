@@ -64,10 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GestureState.cs" />
-    <Compile Include="Assets\Helper.cs" />
-    <Compile Include="Assets\TouchPoint.cs" />
-    <Compile Include="Assets\TouchReceiver.cs" />
+    <Compile Include="Assets\Scripts\GestureState.cs" />
+    <Compile Include="Assets\Scripts\Helper.cs" />
+    <Compile Include="Assets\Scripts\TouchPoint.cs" />
+    <Compile Include="Assets\Scripts\TouchReceiver.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.15f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

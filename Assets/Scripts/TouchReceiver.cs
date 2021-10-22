@@ -15,8 +15,18 @@ public partial class TouchReceiver : MonoBehaviour
     Material currentMat;
     [SerializeField]
     GestureState currentState = GestureState.None;
+
+    public int offSet = 1;
+
     public TouchPoint FirstTouchPoint { get; set; }
     public TouchPoint SecondTouchPoint { get; set; }
+
+    private Vector3 startVec = new Vector3(0f,0f,0f);
+    private bool rotating = false;
+    private float oldAngle = 0;
+    private float angle = 0;
+
+
     void Start()
     {
     }
@@ -34,7 +44,57 @@ public partial class TouchReceiver : MonoBehaviour
         if (FirstTouchPoint != null)
         {
             this.transform.position = FirstTouchPoint.fromTUIO();
+
+            if (SecondTouchPoint != null)
+            {
+                //TODO
+                //Calling of Scale Methods
+                rotateObject(FirstTouchPoint.fromTUIO(), SecondTouchPoint.fromTUIO());
+            }
+            else
+            {
+                rotating = false;
+            }
+           
         }
+        
+    }
+
+    void rotateObject(Vector3 first, Vector3 second)
+    {
+
+        if (!rotating)
+        {
+            startVec = first - second;
+            rotating = true;
+            
+        }
+        else
+        {
+            Vector3 movedVec = first - second;
+            angle = Vector3.SignedAngle(startVec, movedVec, this.transform.position);
+            Debug.Log("angle: " + angle);
+            
+
+            if (oldAngle != angle)
+            {
+                this.transform.RotateAround(this.transform.forward, angle/offSet);
+                oldAngle = angle;
+
+            }
+            else
+            {
+                rotating = false;
+                //angle = 0;
+                //oldAngle = 0;
+            }
+
+        }
+    }
+
+    void scaleObject()
+    {
+
     }
 
     /// <summary>

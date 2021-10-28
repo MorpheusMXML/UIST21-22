@@ -53,7 +53,7 @@ public partial class TouchReceiver : MonoBehaviour
             currentT1Pos = FirstTouchPoint.fromTUIO();
             
 
-            if (SecondTouchPoint != null)
+            if (SecondTouchPoint != null && SecondTouchPoint.Active)
             {
                 currentT2Pos = SecondTouchPoint.fromTUIO();
 
@@ -70,7 +70,7 @@ public partial class TouchReceiver : MonoBehaviour
                     float scaleFactor = currentDistanceT1T2 / previousDistanceT1T2;
                     Vector3 translation = (movementT1 + movementT2) * 0.5f;
 
-                    transform.RotateAround(this.transform.forward, rotationAngle); //Rotation
+                    transform.RotateAround(this.transform.forward, rotationAngle/ offSet); //Rotation
                     transform.localScale *= scaleFactor; //Skalierung
                     transform.position += translation;
                 }
@@ -78,7 +78,6 @@ public partial class TouchReceiver : MonoBehaviour
                 previousFrameTwoTouches = true;
                 previousFrameT1Pos = FirstTouchPoint.fromTUIO();
                 previousFrameT2Pos = SecondTouchPoint.fromTUIO();
-                //SecondTouchPoint = null; Das hat es zerschossen...
             }
             else
             {
